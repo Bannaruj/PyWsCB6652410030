@@ -22,9 +22,11 @@ def create_file ():
         if result >= 50:
             fileName.write(f'กรุณากรอกชื่อ{name_surname}\nกรุณากรอกคะเเนนกลางภาค{mid}\nกรุณากรอกคะเเนนปลายภาค{final}\nกรุณากรอกคะเเนนคะเเนนเก็บ{assignment}\n{result}คุณผ่าน')
             fileName.close()
+            print('สร้างไฟล์ใหม่และเพิ่มข้อมูลเรียบร้อยเเล้ว')
         else:
             fileName.write(f'กรุณากรอกชื่อ{name_surname}\nกรุณากรอกคะเเนนกลางภาค{mid}\nกรุณากรอกคะเเนนปลายภาค{final}\nกรุณากรอกคะเเนนคะเเนนเก็บ{assignment}\n{result}คุณไม่ผ่าน')
             fileName.close()
+            print('สร้างไฟล์ใหม่และเพิ่มข้อมูลเรียบร้อยเเล้ว')
 
 def searchFile():
     fileExplorer = os.listdir()
@@ -34,9 +36,10 @@ def searchFile():
         for showFile in fileExplorer:
             if showFile.endswith(".txt"):
                 print(showFile)
+        print('เลือกวิชาเเละเพิ่มข้อมูลต่อท้ายไฟล์')
         selectFile = input('เลือกไฟล์')
         if selectFile not in fileExplorer:
-            print('พิมพ์ชื่อไฟล์ไม่ถูก')
+            print('พิมพ์ชื่อไฟล์ไม่ถูกหรือไม่มี.txt')
         else:
             fileName = open(selectFile,'a',encoding='utf-8')
             name_surname, mid, final, assignment = data()
@@ -44,9 +47,11 @@ def searchFile():
             if result >= 50:
                 fileName.write(f'กรุณากรอกชื่อ{name_surname}\nกรุณากรอกคะเเนนกลางภาค{mid}\nกรุณากรอกคะเเนนปลายภาค{final}\nกรุณากรอกคะเเนนคะเเนนเก็บ{assignment}\n{result}คุณผ่าน')
                 fileName.close()
+                print('เพิ่มข้อมูลต่อเรียบร้อย')
             else:
                 fileName.write(f'กรุณากรอกชื่อ{name_surname}\nกรุณากรอกคะเเนนกลางภาค{mid}\nกรุณากรอกคะเเนนปลายภาค{final}\nกรุณากรอกคะเเนนคะเเนนเก็บ{assignment}\n{result}คุณไม่ผ่าน')
                 fileName.close()
+                print('เพิ่มข้อมูลต่อเรียบร้อย')
 def readFile() :
     fileExplorer = os.listdir()
     if not fileExplorer:
